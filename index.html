@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Rock, Paper, Scissors</title>
+</head>
+<body>
+<script>
+    function getComputerChoice() {
+        let compNum = Math.floor(Math.random() * 3);
+        switch (compNum) {
+            case 0:
+                return "rock";
+            case 1:
+                return "paper";
+            case 2:
+                return "scissors";
+        }
+    }
+    
+    function getUserChoice() {
+        let user = prompt("choose rock, paper, or scissors!")
+        return user.toLowerCase();
+    }
+
+    let playerStatus;
+
+    function playRound(playerSelection, computerSelection) {
+        if (playerSelection == "rock" && computerSelection == "paper") {
+            playerStatus = "lose";
+        } else if (playerSelection == "paper" && computerSelection == "scissors") {
+            playerStatus = "lose";
+        } else if (playerSelection == "scissors" && computerSelection == "rock") {
+            playerStatus = "lose";
+        } else if (playerSelection == "rock" && computerSelection == "scissors") {
+            playerStatus = "win";
+        } else if (playerSelection == "paper" && computerSelection == "rock") {
+            playerStatus = "win";
+        } else if (playerSelection == "scissors" && computerSelection == "paper") {
+            playerStatus = "win";
+        } else if (playerSelection == computerSelection) {
+            playerStatus = "tie";
+        }
+        let message = "error.";
+        if (playerStatus == "tie") {
+            message = "it's a tie! both players chose " + playerSelection + ".";
+        } else if (playerStatus == "lose") {
+            message = "you lose! " + computerSelection + " beats " + playerSelection + ".";
+        } else if (playerStatus == "win"){
+            message = "you win! " + playerSelection + " beats " + computerSelection + ".";
+        }
+
+        alert(message);
+    }
+
+    function game() {
+        let wins = 0;
+        let gamesLeft = 5;
+        while (gamesLeft > 0) {
+            const playerSelection = getUserChoice();
+            const computerSelection = getComputerChoice();
+            playRound(playerSelection, computerSelection);
+            if (playerStatus == "win") {
+                ++wins;
+            }
+            --gamesLeft;
+        }
+        if (wins >= 3) {
+            return "congrats, you win! (best 3 out of 5)"
+        } else {
+            return "rats, you lose... (best 3 ouf ot 5)"
+        }
+    }
+
+    
+    console.log(game());
+</script>
+</body>
+</html>
