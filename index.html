@@ -32,10 +32,21 @@
 </div>
 
 <div class="score">
-    <div class="user">0</div>
+    <div class="user">
+        <div id="user-head">Your Score</div>
+        <div id="user-score">0</div>
+    </div>
+    <div class="computer">
+        <div id="computer-head">Computer Score</div>
+        <div id="computer-score">0</div>
+    </div>
 </div>
 
 <script>
+
+    const userScore = document.querySelector('#user-score');
+    const compScore = document.querySelector('#computer-score');
+
     function getComputerChoice() {
         let compNum = Math.floor(Math.random() * 3);
         switch (compNum) {
@@ -75,6 +86,11 @@
             message = "you win! " + playerSelection + " beats " + computerSelection + ".";
         }
 
+        if (playerStatus == "win") {
+            ++userScore.innerHTML;
+        } else if (playerStatus == "lose") {
+            ++compScore.innerHTML;
+        }
         alert(message);
     }
 
