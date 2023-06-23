@@ -92,6 +92,16 @@
             ++compScore.innerHTML;
         }
         alert(message);
+
+        if (userScore.innerHTML == 5) {
+            alert("Congrats, you win! Best 3 out of 5 :)");
+            userScore.innerHTML = 0;
+            compScore.innerHTML = 0;
+        } else if (compScore.innerHTML == 5) {
+            alert("Rats, you lost! Best 3 ouf ot 5 :(");
+            userScore.innerHTML = 0;
+            compScore.innerHTML = 0;
+        }
     }
 
     const r = document.querySelector('#rock');
