@@ -26,9 +26,13 @@
 </div>
 
 <div class="choices">
-    <btn id="rock">Rock</btn>
-    <btn id="paper">Paper</btn>
-    <btn id="scissors">Scissors</btn>
+    <div class="btn" id="rock">Rock</div>
+    <div class="btn" id="paper">Paper</div>
+    <div class="btn" id="scissors">Scissors</div>
+</div>
+
+<div class="score">
+    <div class="user">0</div>
 </div>
 
 <script>
@@ -42,11 +46,6 @@
             case 2:
                 return "scissors";
         }
-    }
-    
-    function getUserChoice() {
-        let user = prompt("choose rock, paper, or scissors!")
-        return user.toLowerCase();
     }
 
     let playerStatus;
@@ -79,7 +78,21 @@
         alert(message);
     }
 
-    // console.log(game());
+    const r = document.querySelector('#rock');
+    const p = document.querySelector('#paper');
+    const s = document.querySelector('#scissors');
+    //console.log(scissors);
+
+    r.addEventListener('click', function (e) {
+        playRound('rock', getComputerChoice());
+    });
+    p.addEventListener('click', function (e) {
+        playRound('paper', getComputerChoice())
+    });
+    s.addEventListener('click', function (e) {
+        playRound('scissors', getComputerChoice())
+    });
+
 </script>
 </body>
 </html>
