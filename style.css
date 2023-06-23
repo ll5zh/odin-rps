@@ -1,0 +1,71 @@
+body {
+    font-family: "Tahoma", sans-serif;
+    background-color: peachpuff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.header {
+    font-size: 32px;
+    background-color: palevioletred;
+    color: aliceblue;
+    font-weight: 650;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 18px;
+}
+
+.intro {
+    display: flex;
+    align-items: stretch;
+    font-weight: 600;
+    font-size: 20px;
+    margin: 2% 5%;
+    gap: 3%;
+    justify-content: stretch;
+    align-items: center;
+}
+
+.ment {
+    width: 60%;
+    background-color: indianred;
+    color: aliceblue;
+    padding: 30px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.rules {
+    background-color: aliceblue;
+    color: indianred;
+    padding: 30px;
+    width: 40%;
+    border-radius: 30px;
+    text-align: center;
+}
+
+ul {
+    text-align: start;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin: 0 5%;
+}
+
+btn {
+    background-color: rosybrown;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 24px;
+    padding: 18px 36px;
+    width: 120px;
+    border-radius: 35px;
+    text-align: center;
+    cursor: pointer;
+}

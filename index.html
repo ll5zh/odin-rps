@@ -4,8 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="./style.css"/>
 </head>
 <body>
+
+<div class="header">Play Rock, Paper, Scissors!</div>
+
+<div class="intro">
+    <div class="ment">
+        Welcome to Rock, Paper, Scissors! Click on one of the buttons below in order to choose your player. See if you can win against the computer's choice!
+    </div>
+    <div class="rules">
+        Here are the rules:
+        <ul>
+            <li>ROCK beats SCISSORS</li>
+            <li>PAPER beats ROCK</li>
+            <li>SCISSORS beats PAPER</li>
+        </ul>
+        Good luck/Have fun!
+    </div>
+</div>
+
+<div class="choices">
+    <btn id="rock">Rock</btn>
+    <btn id="paper">Paper</btn>
+    <btn id="scissors">Scissors</btn>
+</div>
+
 <script>
     function getComputerChoice() {
         let compNum = Math.floor(Math.random() * 3);
@@ -54,27 +79,7 @@
         alert(message);
     }
 
-    function game() {
-        let wins = 0;
-        let gamesLeft = 5;
-        while (gamesLeft > 0) {
-            const playerSelection = getUserChoice();
-            const computerSelection = getComputerChoice();
-            playRound(playerSelection, computerSelection);
-            if (playerStatus == "win") {
-                ++wins;
-            }
-            --gamesLeft;
-        }
-        if (wins >= 3) {
-            return "congrats, you win! (best 3 out of 5)"
-        } else {
-            return "rats, you lose... (best 3 ouf ot 5)"
-        }
-    }
-
-    
-    console.log(game());
+    // console.log(game());
 </script>
 </body>
 </html>
